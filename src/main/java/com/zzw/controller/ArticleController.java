@@ -28,6 +28,6 @@ public class ArticleController {
 
 
 //
-    return Result.success("所有文章数据");
+    return Result.success("所有文章数据aaa");
     }
 }
