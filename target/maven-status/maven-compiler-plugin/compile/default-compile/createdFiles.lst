@@ -1,0 +1,10 @@
+com\zzw\pojo\Category.class
+com\zzw\service\impl\UserServiecImpl.class
+com\zzw\BigEventApplication.class
+com\zzw\controller\UserController.class
+com\zzw\service\UserService.class
+com\zzw\util\Md5Util.class
+com\zzw\pojo\Result.class
+com\zzw\pojo\User.class
+com\zzw\mapper\UserMapper.class
+com\zzw\pojo\Article.class
