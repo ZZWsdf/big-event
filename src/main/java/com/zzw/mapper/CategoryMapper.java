@@ -14,6 +14,9 @@ public interface CategoryMapper {
             "values (#{categoryName},#{categoryAlias},#{createUser},#{createTime},#{updateTime})")
     void add(Category category);
     //查询所有
-    @Select("select * from big_event.category where create_user=#{id} ")
+    @Select("select * from category where create_user=#{id} ")
     List<Category> list(Integer id);
+    //查询分类详情
+    @Select("select * from category where id=#{id}")
+    Category fingByid(Integer id);
 }

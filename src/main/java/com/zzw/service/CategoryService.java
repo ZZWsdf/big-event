@@ -9,4 +9,6 @@ public interface CategoryService {
     void add(Category category);
     //列表查询
     List<Category> list();
+    //查询详情
+    Category fingByid(Integer id);
 }

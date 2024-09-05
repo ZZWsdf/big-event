@@ -34,4 +34,10 @@ public class CategoryServicelmpl implements CategoryService {
         Integer id = (Integer) map.get("id");
         return categoryMapper.list(id);
     }
+
+    @Override
+    public Category fingByid(Integer id) {
+        Category category=categoryMapper.fingByid(id);
+        return category;
+    }
 }
