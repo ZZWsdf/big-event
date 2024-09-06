@@ -2,6 +2,7 @@ package com.zzw.service.impl;
 
 import com.zzw.mapper.ArticleMapper;
 import com.zzw.pojo.Article;
+import com.zzw.pojo.Category;
 import com.zzw.service.ArticleService;
 import com.zzw.util.ThreadLocalUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,16 @@ public class ArticleServiceImpl implements ArticleService {
         Integer userid= (Integer) map.get("id");
         article.setCreateUser(userid);
         articleMapper.add(article);
+    }
+
+    @Override
+    public Article detail(Integer id) {
+        Article article=articleMapper.detail(id);
+        return article;
+    }
+
+    @Override
+    public void delete(Integer id) {
+        articleMapper.delete(id);
     }
 }
