@@ -13,4 +13,6 @@ public interface CategoryService {
     Category fingByid(Integer id);
     //更新新类别
     void update(Category category);
+    //删除类别
+    void del(Integer id);
 }

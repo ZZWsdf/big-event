@@ -46,4 +46,9 @@ public class CategoryServicelmpl implements CategoryService {
         category.setUpdateTime(LocalDateTime.now());
         categoryMapper.update(category);
     }
+
+    @Override
+    public void del(Integer id) {
+        categoryMapper.del(id);
+    }
 }
