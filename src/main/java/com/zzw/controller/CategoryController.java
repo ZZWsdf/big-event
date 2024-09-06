@@ -4,6 +4,7 @@ import com.zzw.pojo.Category;
 import com.zzw.pojo.Result;
 import com.zzw.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -30,5 +31,10 @@ public class CategoryController {
     public Result<Category> detail(Integer id){
         Category category=categoryService.fingByid(id);
         return Result.success(category);
+    }
+    @PutMapping
+    public Result update(@Validated @RequestBody Category category){
+        categoryService.update(category);
+        return Result.success();
     }
 }

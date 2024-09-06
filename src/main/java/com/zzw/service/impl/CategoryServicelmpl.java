@@ -40,4 +40,10 @@ public class CategoryServicelmpl implements CategoryService {
         Category category=categoryMapper.fingByid(id);
         return category;
     }
+
+    @Override
+    public void update(Category category) {
+        category.setUpdateTime(LocalDateTime.now());
+        categoryMapper.update(category);
+    }
 }

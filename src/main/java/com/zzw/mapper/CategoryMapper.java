@@ -4,6 +4,7 @@ import com.zzw.pojo.Category;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -19,4 +20,7 @@ public interface CategoryMapper {
     //查询分类详情
     @Select("select * from category where id=#{id}")
     Category fingByid(Integer id);
+    //更新数据
+    @Update("update category set category_name=#{categoryName},category_alias=#{categoryAlias},update_time=#{updateTime} where id=#{id}")
+    void update(Category category);
 }
