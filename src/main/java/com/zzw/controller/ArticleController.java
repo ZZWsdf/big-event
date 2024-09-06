@@ -28,6 +28,11 @@ public class ArticleController {
         Article article=articleService.detail(id);
         return Result.success(article);
     }
+    @PutMapping
+    public Result update(@Validated @RequestBody Article article){
+        articleService.update(article);
+        return Result.success();
+    }
     @DeleteMapping
     public Result delete(Integer id){
         articleService.delete(id);

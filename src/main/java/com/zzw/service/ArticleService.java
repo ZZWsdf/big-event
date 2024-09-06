@@ -8,4 +8,6 @@ public interface ArticleService {
     Article detail(Integer id);
     //删除文章
     void delete(Integer id);
+    //更新文章
+    void update(Article article);
 }

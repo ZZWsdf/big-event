@@ -2,10 +2,7 @@ package com.zzw.mapper;
 
 import com.zzw.pojo.Article;
 import com.zzw.pojo.Category;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface ArticleMapper {
@@ -16,7 +13,12 @@ public interface ArticleMapper {
     //查询详情
     @Select("select * from article where id=#{id}")
     Article detail(Integer id);
+
     //删除文章
     @Delete("delete from article where id=#{id}")
     void delete(Integer id);
+    //更新文章
+
+    @Update("update article set title=#{title},content=#{content},cover_img=#{coverImg},state=#{state},category_id=#{categoryId},update_time=#{updateTime} where id=#{id}")
+    void update(Article article);
 }
