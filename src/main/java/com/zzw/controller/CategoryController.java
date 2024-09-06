@@ -15,7 +15,7 @@ public class CategoryController {
     @Autowired
     private CategoryService categoryService;
     @PostMapping
-    public Result add(@RequestBody Category category){
+    public Result add(@RequestBody @Validated(Category.Add.class) Category category){
         categoryService.add(category);
 
         return Result.success();
@@ -33,8 +33,11 @@ public class CategoryController {
         return Result.success(category);
     }
     @PutMapping
-    public Result update(@Validated @RequestBody Category category){
+    public Result update(@Validated(Category.Update.class) @RequestBody Category category){
         categoryService.update(category);
+        return Result.success();
+    }
+    public Result delete(Integer id){
         return Result.success();
     }
 }
