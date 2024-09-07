@@ -4,6 +4,8 @@ import com.zzw.pojo.Article;
 import com.zzw.pojo.Category;
 import org.apache.ibatis.annotations.*;
 
+import java.util.List;
+
 @Mapper
 public interface ArticleMapper {
     //新增文章
@@ -21,4 +23,6 @@ public interface ArticleMapper {
 
     @Update("update article set title=#{title},content=#{content},cover_img=#{coverImg},state=#{state},category_id=#{categoryId},update_time=#{updateTime} where id=#{id}")
     void update(Article article);
+
+    List<Article> list(Integer userid, Integer categoryId, String state);
 }

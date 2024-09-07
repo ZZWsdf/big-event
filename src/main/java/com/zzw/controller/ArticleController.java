@@ -2,6 +2,7 @@ package com.zzw.controller;
 
 import com.zzw.pojo.Article;
 import com.zzw.pojo.Category;
+import com.zzw.pojo.PageBean;
 import com.zzw.pojo.Result;
 import com.zzw.service.ArticleService;
 import com.zzw.util.JwtUtil;
@@ -32,6 +33,14 @@ public class ArticleController {
     public Result update(@Validated @RequestBody Article article){
         articleService.update(article);
         return Result.success();
+    }
+    @GetMapping
+    public Result<PageBean<Article>> list(Integer pageNum,Integer pageSize,
+                                          @RequestParam(required = false) Integer categoryId,
+                                          @RequestParam(required = false) String state){
+        PageBean<Article> pb=articleService.list(pageNum,pageSize,categoryId,state);
+        return Result.success(pb);
+
     }
     @DeleteMapping
     public Result delete(Integer id){
