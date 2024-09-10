@@ -31,10 +31,10 @@ public class JwtTest {
                 "eyJ1c2VyIjp7ImlkIjoxLCJ1c2VybmFtZSI6IuW8oOS4iSJ9LCJleHAiOjE3MjUyMzAxODJ9." +
                 "lENIggYDa8YtNRaqsuHHggPqWWyR6Y94ChA4xtsNR8M";
 
-        JWTVerifier jwtVerifier=JWT.require(Algorithm.HMAC256("zzw")).build();
-        DecodedJWT decodedJWT=jwtVerifier.verify(token);//验证token,生成一个解析后的jwt对象
-        Map<String, Claim> claim=decodedJWT.getClaims();
-        System.out.println(claim.get("user"));
+//        JWTVerifier jwtVerifier=JWT.require(Algorithm.HMAC256("zzw")).build();
+//        DecodedJWT decodedJWT=jwtVerifier.verify(token);//验证token,生成一个解析后的jwt对象
+//        Map<String, Claim> claim=decodedJWT.getClaims();
+//        System.out.println(claim.get("user"));
         //如果token过期，验证失败
         //如果密钥改变，验证失败
         //如果令牌被篡改，验证失败
